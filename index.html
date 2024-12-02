@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Taking web</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@100;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <ul>
+            <li><a href="#" onclick="navigateTo('notes')"><i class="fas fa-sticky-note"></i> Notes</a></li>
+            <li><a href="#" onclick="navigateTo('journal')"><i class="fas fa-book"></i> Journal</a></li>
+            <li><a href="#" onclick="navigateTo('pdf')"><i class="fas fa-file-pdf"></i> PDFs</a></li>
+            <li><a href="#" onclick="navigateTo('flashcards')"><i class="fas fa-lightbulb"></i> Flashcards</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Notes Section -->
+        <div id="notes" class="content-section">
+            <div class="notes-header">
+                <h1>Notes</h1>
+                <button class="add-btn" onclick="addNote()"><i class="fas fa-plus-circle"></i> Add Note</button>
+            </div>
+            <div id="notes-list" class="notes-container"></div>
+        </div>
+
+        <!-- Journal Section -->
+        <div id="journal" class="content-section" style="display: none;">
+            <h1>Journal</h1>
+            
+            <!-- Notebook Section -->
+            <div class="notebook-section">
+                <h2>Notebooks</h2>
+                <div id="notebooks-container"></div>
+                <button class="add-btn" onclick="addNotebook()">+ Add Notebook</button>
+            </div>
+        
+            <!-- Journal Entries Section -->
+            <div class="entries-section" style="display: none;">
+                <h2 id="notebook-title"></h2>
+                <button onclick="goBackToNotebooks()" class="back-btn">&larr; Back</button>
+                <button class="add-btn" onclick="addEntry()">+ Add Entry</button>
+                <div id="entries-container"></div>
+            </div>
+        </div>
+
+        <!-- PDF Section -->
+        <div id="pdf" class="content-section" style="display: none;">
+            <h1>PDFs</h1>
+            <input type="file" accept=".pdf">
+        </div>
+
+        <!-- Flashcards Section -->
+        <div id="flashcards" class="content-section" style="display: none;">
+            <h1>Flashcards</h1>
+            <input type="text" placeholder="Add your word of the day">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

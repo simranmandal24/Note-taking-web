@@ -1,0 +1,208 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(120deg, rgb(196, 207, 216), rgb(144, 191, 230));
+}
+
+.content {
+    margin-left: 300px;
+    padding: 20px;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section:first-child {
+    display: block;
+}
+
+/* Sidebar styles */
+.sidebar {
+    margin-top: 20px;
+    width: 200px;
+    background-color: rgb(120, 160, 194);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    height: 100%;
+    padding: 20px;
+    transition: left 0.3s ease;
+    /* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); */
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Hamburger menu */
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 100;
+    color: white;
+}
+
+/* Notes Section */
+.notes-header {
+    /* position: sticky; */
+    top: 0;   
+    z-index: 10;
+    padding: 10px 0;
+    display: block;    
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left:300px;
+}
+
+.notes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.note {
+    background-color: #ffeaa7;
+    color: #2d3436;
+    border: 1px solid #fdcb6e;
+    border-radius: 8px;
+    width: 500px;
+    height: 200px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.note:hover {
+    transform: scale(1.05);
+}
+
+.note-text {
+    flex: 1;
+    border: none;
+    background: transparent;
+    resize: none;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    overflow-y: auto;
+}
+
+.note-buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: red;
+}
+
+.note-buttons button:hover {
+    color: darkred;
+}
+
+.add-btn {
+    background-color:rgb(120, 160, 194);
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.add-btn:hover {
+    background-color: #0f8686;
+}
+
+.content-section h1{
+    font-family:"Lobster", cursive ;
+    font-size: 3em;
+
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .content {
+        margin-left: 0;
+    }
+
+    .sidebar {
+        width: 100px;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+    .notes-header {
+        /* position: sticky; */
+        top: 0;   
+        z-index: 10;
+        padding: 10px 0;
+        display: block;    
+        justify-content: space-evenly;
+        align-items: center;
+        margin-left:300px;
+    }
+
+
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .notes-container {
+        flex-direction: column;
+        margin-left: 30%;
+        gap: 10px;
+    }
+
+    .note {
+        width:90%;
+    }
+    .notes-header {
+        /* position: sticky; */
+        top: 0;   
+        z-index: 10;
+        padding: 10px 0;
+        display: block;    
+        justify-content: space-evenly;
+        align-items: center;
+        margin-left: 30%;
+      
+    }
+}
